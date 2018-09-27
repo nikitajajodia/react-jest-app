@@ -1,12 +1,13 @@
 {
-  "name": "react-redux-boilerplate",
+  "name": "react-jest-app",
   "version": "1.0.0",
-  "description": "Boilerplate to setup your react-redux app with eslint lint and jest",
+  "description": "A react app with JEST and Enzyme",
   "author": "Nikita-Jajodia",
   "repository": "https://github.com/nikitajajodia/react-redux-boilerplate.git",
   "scripts": {
     "dev": "webpack-dev-server --historyApiFallback true --port 8888 --content-base build/",
     "test": "jest",
+    "updatetest": "npm test -- -u",
     "lint": "eslint ./src",
     "lintfix": "eslint ./src --fix"
   },
