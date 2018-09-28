@@ -1,22 +1,38 @@
 import React from 'react';
+
 import { App } from '../components';
 
-const app = shallow(<App />);
+describe('App', () => {
 
-it('renders correctly', () => {
-  expect(app).toMatchSnapshot();
-});
+	const app = shallow(<App />);
 
-it('initialises the state with an empty list of gifts', () => {
-  expect(app.state().gifts).toEqual([]);
-});
+	it('renders correctly', () => {
+	  expect(app).toMatchSnapshot();
+	});
 
-it('adds a new gift to state when clicking the add button', () => {
-  app.find('.btn-add').simulate('click');
-  expect(app.state().gifts).toEqual([{ id: 1 }]);
-});
+	it('initialises the state with an empty list of gifts', () => {
+	  expect(app.state().gifts).toEqual([]);
+	});
 
-it('addas a new gift to the rendered list when clicking the add button', () => {
-  app.find('.btn-add').simulate('click');
-  expect(app.find('.gift-list').children().length).toEqual(2);
-});
+	describe('when clicking an add gift button', () => {
+		// is executed before each test running in this block
+		beforeEach(() => {
+		  app.find('.btn-add').simulate('click');
+		});
+
+		// is executed after each test running in this block
+		afterEach(() => {
+			app.setState({ gifts: []});
+		});
+
+		it('adds a new gift to state', () => {
+		  expect(app.state().gifts).toEqual([{ id: 1 }]);
+		});
+
+		it('addas a new gift to the rendered list', () => {
+		  expect(app.find('.gift-list').children().length).toEqual(1);
+		});
+	});
+	
+})
+
