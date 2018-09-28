@@ -1,4 +1,5 @@
 import React from 'react';
+import Gift from './Gift';
 
 class App extends React.Component {
   constructor() {
@@ -38,8 +39,7 @@ class App extends React.Component {
           {
             gifts.map(gift => (
               <div key={gift.id}>
-                {gift.id}
-                test
+                <Gift />
               </div>
             ))
           }

@@ -4,6 +4,12 @@ exports[`Gift--> renders properly 1`] = `
 <div>
   <form>
     <input
+      className="input-person"
+      onChange={[Function]}
+      type="text"
+    />
+    <input
+      className="input-present"
       onChange={[Function]}
       type="text"
     />
