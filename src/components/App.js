@@ -19,18 +19,34 @@ class App extends React.Component {
     gifts.push({
       id: maxId + 1,
     });
+
+    this.setState({
+      gifts,
+    });
   }
 
   render() {
+    const {
+      gifts,
+    } = this.state;
     return (
       <div>
         <h2>
           Gift Giver
-          <button className="btn-add" onClick={this.addGift} type="button">
-            Add Gift
-          </button>
-          {' '}
         </h2>
+        <div className="gift-list">
+          {
+            gifts.map(gift => (
+              <div key={gift.id}>
+                {gift.id}
+                test
+              </div>
+            ))
+          }
+        </div>
+        <button className="btn-add" onClick={this.addGift} type="button">
+          Add Gift
+        </button>
       </div>
     );
   }

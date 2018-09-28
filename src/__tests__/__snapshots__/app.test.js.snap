@@ -4,14 +4,16 @@ exports[`renders correctly 1`] = `
 <div>
   <h2>
     Gift Giver
-    <button
-      className="btn-add"
-      onClick={[Function]}
-      type="button"
-    >
-      Add Gift
-    </button>
-     
   </h2>
+  <div
+    className="gift-list"
+  />
+  <button
+    className="btn-add"
+    onClick={[Function]}
+    type="button"
+  >
+    Add Gift
+  </button>
 </div>
 `;
