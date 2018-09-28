@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Gift--> renders properly 1`] = `
+<div>
+  <form>
+    <input
+      onChange={[Function]}
+      type="text"
+    />
+  </form>
+</div>
+`;
