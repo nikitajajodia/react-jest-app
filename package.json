@@ -20,6 +20,10 @@
     "setupFiles": [
       "./setupTests.js"
     ],
+    "collectCoverageFrom": [
+      "!src/index.js",
+      "src/components/*.js"
+    ],
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ]
