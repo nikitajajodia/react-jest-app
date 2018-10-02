@@ -3,13 +3,16 @@ import React from 'react';
 import { Gift } from '../components';
 
 describe('Gift-->', () => {
-  const gift = shallow(<Gift />);
+  const mockRemove = jest.fn();
+  const id = 1;
+  const props = { gift: { id }, removeGift: mockRemove };
+  const gift = shallow(<Gift {...props} />);
 
   it('renders properly', () => {
     expect(gift).toMatchSnapshot();
   });
 
-  it('initialises a person and present in that state', () => {
+  it('initialises a person and present in the state', () => {
     expect(gift.state()).toEqual({ person: '', present: '' });
   });
 
@@ -32,6 +35,16 @@ describe('Gift-->', () => {
 
     it('updates the present in state', () => {
       expect(gift.state().present).toEqual(present);
+    });
+  });
+
+  describe('when user clicks the remove gift button', () => {
+    beforeEach(() => {
+      gift.find('.remove-gift').simulate('click');
+    });
+
+    it('calls the removeGift callback', () => {
+      expect(mockRemove).toHaveBeenCalledWith(id);
     });
   });
 });

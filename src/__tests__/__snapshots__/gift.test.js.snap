@@ -3,16 +3,25 @@
 exports[`Gift--> renders properly 1`] = `
 <div>
   <form>
+    Person
     <input
       className="input-person"
       onChange={[Function]}
       type="text"
     />
+    Present
     <input
       className="input-present"
       onChange={[Function]}
       type="text"
     />
   </form>
+  <button
+    className="remove-gift"
+    onClick={[Function]}
+    type="button"
+  >
+    Remove Gift
+  </button>
 </div>
 `;

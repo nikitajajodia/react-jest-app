@@ -26,6 +26,16 @@ class App extends React.Component {
     });
   }
 
+  removeGift = (id) => {
+    const {
+      gifts,
+    } = this.state;
+    const newGifts = gifts.filter(gift => gift.id !== id);
+    this.setState({
+      gifts: newGifts,
+    });
+  }
+
   render() {
     const {
       gifts,
@@ -39,7 +49,10 @@ class App extends React.Component {
           {
             gifts.map(gift => (
               <div key={gift.id}>
-                <Gift />
+                <Gift
+                  gift={gift}
+                  removeGift={this.removeGift}
+                />
               </div>
             ))
           }
