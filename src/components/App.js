@@ -1,6 +1,6 @@
 import React from 'react';
 import Gift from './Gift';
-import { max_number } from '../helper';
+import { maxNumber } from '../helper';
 
 class App extends React.Component {
   constructor() {
@@ -18,7 +18,7 @@ class App extends React.Component {
     const ids = gifts.map(gift => gift.id);
 
     gifts.push({
-      id: max_number(ids) + 1,
+      id: maxNumber(ids) + 1,
     });
 
     this.setState({
